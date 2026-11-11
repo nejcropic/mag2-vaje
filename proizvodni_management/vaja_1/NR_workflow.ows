@@ -6,14 +6,15 @@
 		<node id="2" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table" position="(390.0, 235.0)" />
 		<node id="3" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Python Script" position="(120.0, 357.0)" />
 		<node id="4" name="Line Plot" qualified_name="Orange.widgets.visualize.owlineplot.OWLinePlot" project_name="Orange3" version="" title="Line Plot" position="(391.0, 355.0)" />
+		<node id="5" name="Line Plot" qualified_name="Orange.widgets.visualize.owlineplot.OWLinePlot" project_name="Orange3" version="" title="Line Plot (1)" position="(299.2307692307692, 442.30769230769226)" />
 	</nodes>
 	<links>
 		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Time series" enabled="true" source_channel_id="data" sink_channel_id="time_series" />
 		<link id="1" source_node_id="3" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
 		<link id="2" source_node_id="0" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
-		<link id="3" source_node_id="1" sink_node_id="4" source_channel="Time series" sink_channel="Data Subset" enabled="true" source_channel_id="time_series" sink_channel_id="data_subset" />
-		<link id="4" source_node_id="1" sink_node_id="2" source_channel="Time series" sink_channel="Data Subset" enabled="true" source_channel_id="time_series" sink_channel_id="data_subset" />
-		<link id="5" source_node_id="3" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="3" source_node_id="1" sink_node_id="2" source_channel="Time series" sink_channel="Data Subset" enabled="true" source_channel_id="time_series" sink_channel_id="data_subset" />
+		<link id="4" source_node_id="3" sink_node_id="5" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="5" source_node_id="1" sink_node_id="4" source_channel="Time series" sink_channel="Data" enabled="true" source_channel_id="time_series" sink_channel_id="data" />
 	</links>
 	<annotations />
 	<thumbnail />
@@ -54,9 +55,19 @@ SwKGlGheSwKGlGhgSwKGlGhiSwKGlHSUaFEpaFJoZF2UKIwLSXJpcy1zZXRvc2GUjA9JcmlzLXZl
 cnNpY29sb3KUjA5JcmlzLXZpcmdpbmljYZRlhpSFlGhTXZR1YmV1Lg==
 </properties>
 		<properties node_id="1" format="literal">{'autocommit': True, 'block_width': 5, 'controlAreaVisible': True, 'keep_instances': 1, 'method': 0, 'migrated_aggregate': False, 'period_width': 'Years', 'ref_instance': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x0c\x00\x00\x00\xd4\x00\x00\x04a\x00\x00\x02\xe3\x00\x00\x02\r\x00\x00\x00\xf2\x00\x00\x04`\x00\x00\x02\xe2\x00\x00\x00\x00\x00\x00\x00\x00\x06n\x00\x00\x02\r\x00\x00\x00\xf2\x00\x00\x04`\x00\x00\x02\xe2', 'use_names': True, 'var_hints': {}, 'window_width': 5, '__version__': 1}</properties>
-		<properties node_id="2" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': None, 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="2" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xa6\x00\x00\x00\xd2\x00\x00\x04\xc7\x00\x00\x02\xe4\x00\x00\x01\xa7\x00\x00\x00\xf0\x00\x00\x04\xc6\x00\x00\x02\xe3\x00\x00\x00\x00\x00\x00\x00\x00\x06n\x00\x00\x01\xa7\x00\x00\x00\xf0\x00\x00\x04\xc6\x00\x00\x02\xe3', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [3], 'columns': [0, 1, 2]}, 'stored_sort': [], '__version__': 1}</properties>
 		<properties node_id="3" format="literal">{'controlAreaVisible': True, 'currentScriptIndex': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\xc9\x00\x00\x00\x93\x00\x00\x062\x00\x00\x03z\x00\x00\x02\xca\x00\x00\x00\xb1\x00\x00\x061\x00\x00\x03y\x00\x00\x00\x00\x00\x00\x00\x00\x06n\x00\x00\x02\xca\x00\x00\x00\xb1\x00\x00\x061\x00\x00\x03y', 'scriptLibrary': [{'name': 'Table from numpy', 'script': "import numpy as np\nfrom Orange.data import Table, Domain, ContinuousVariable, DiscreteVariable\n\ndef moving_average(x,nn):\n    x_len=len(x)\n    y = np.zeros(x_len)\n    for idx in range(x_len):\n        if idx&lt;nn:\n            y[idx]=np.nan\n        else:\n            y[idx]=np.sum(x[(idx-nn):idx])/nn\n    return y\n\nin_data = in_data\n\nt=in_data[:,'Datum'].X.flatten()\nx=in_data[:,'Povpraševanje'].X.flatten()\n\ny_new = moving_average(x,2)\n\ndomain = Domain([ContinuousVariable('Datum'),ContinuousVariable('Povpraševanje'),ContinuousVariable('Moving_Avearage')])\n\narr=np.column_stack((t,x,y_new))\n\nout_data = Table.from_numpy(domain,arr)", 'filename': None}], 'scriptText': "import numpy as np\nfrom Orange.data import Table, Domain, ContinuousVariable, DiscreteVariable\n\ndef moving_average(x,nn):\n    x_len=len(x)\n    y = np.zeros(x_len)\n    for idx in range(x_len):\n        if idx&lt;nn:\n            y[idx]=np.nan\n        else:\n            y[idx]=np.sum(x[(idx-nn):idx])/nn\n    return y\n\nin_data = in_data\n\nt=in_data[:,'Datum'].X.flatten()\nx=in_data[:,'Povpraševanje'].X.flatten()\n\ny_new = moving_average(x,2)\n\ndomain = Domain([ContinuousVariable('Datum'),ContinuousVariable('Povpraševanje'),ContinuousVariable('Moving_Avearage')])\n\narr=np.column_stack((t,x,y_new))\n\nout_data = Table.from_numpy(domain,arr)", 'splitterState': b'\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xa1\x00\x00\x00a\x01\xff\xff\xff\xff\x01\x00\x00\x00\x02\x00', 'vimModeEnabled': False, '__version__': 2}</properties>
-		<properties node_id="4" format="pickle">gASVowEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZl
+		<properties node_id="4" format="pickle">gASV6QEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZl
+ZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAAESAAAAdQAABVwAAANBAAABEwAAAJMAAAVbAAAD
+QAAAAAAAAAAABm4AAAETAAAAkwAABVsAAANAlIwJc2VsZWN0aW9ulE6MCnNob3dfZXJyb3KUiYwJ
+c2hvd19tZWFulIiMDXNob3dfcHJvZmlsZXOUiIwKc2hvd19yYW5nZZSIjA92aXN1YWxfc2V0dGlu
+Z3OUfZSMC19fdmVyc2lvbl9flEsBjBBjb250ZXh0X3NldHRpbmdzlF2UKIwVb3Jhbmdld2lkZ2V0
+LnNldHRpbmdzlIwHQ29udGV4dJSTlCmBlH2UKIwGdmFsdWVzlH2UKIwJZ3JvdXBfdmFylE5K/v//
+/4aUaAxLAXWMCmF0dHJpYnV0ZXOUfZQojAVEYXR1bZRLBIwOUG92cHJhxaFldmFuamWUSwJ1jAVt
+ZXRhc5R9lHViaBEpgZR9lChoFH2UKGgWTkr+////hpRoDEsBdWgYfZQojAVEYXR1bZRLAowOUG92
+cHJhxaFldmFuamWUSwKMD01vdmluZ19BdmVhcmFnZZRLAnVoHH2UdWJldS4=
+</properties>
+		<properties node_id="5" format="pickle">gASVowEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZl
 ZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAAESAAAAdQAABVwAAANBAAABEwAAAJMAAAVbAAAD
 QAAAAAAAAAAABm4AAAETAAAAkwAABVsAAANAlIwJc2VsZWN0aW9ulE6MCnNob3dfZXJyb3KUiYwJ
 c2hvd19tZWFulIiMDXNob3dfcHJvZmlsZXOUiIwKc2hvd19yYW5nZZSIjA92aXN1YWxfc2V0dGlu
